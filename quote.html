@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/png" href="static/site_icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quote.css">
+    <title>Quote of the Day</title>
+</head>
+<body>
+	<script src="index.js"></script>
+	<header> 
+		<div class="titlebar">Quote of the Day</div>
+		<div class="navbar-btn" onclick="toggleNavBar()">☰</div>
+		<div class="navbar"> 
+			<a href="index.html">Ez a Média</a>
+			<a href="indev.html" class="depressed" >Órarend</a>
+			<a href="indev.html" class="depressed" >Helyettesítések</a>
+			<a class="active">Quote of the Day</a>
+			<a href="jeloltek.html" class="" >Jelöltjeink</a>
+			<a href="sponsors.html">Szponzorok</a>
+		</div>
+	</header>
+    <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
+	<main>
+		<div class="box">
+			<p> <span class="quote-sign">„ </span><span class="field" id="quote"></span><span class="quote-sign"> ”</span></p>
+		</div>
+		<div class="box hidden" id="expression-box">
+			<div>
+			<p><span id="expressionTitle"></span><br><span class="quote-sign">„ </span><span class="field" id="expression"></span><span class="quote-sign"> ”</span></p>
+			</div>
+		</div>
+		<div class="box" id="explanation-box">
+			<p id="explanation">Az élet bölcsességei összegyűjtve csak most, csak neked.</p>
+		</div>
+	</main>
+    <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
+	<footer>
+		<div class="footer-grid">
+			<div id="grid-div">
+				<p id="footer-title">Szolgáltatások</p>
+				<p><a href="indev.html" class="depressed">Órarend</a></p>
+				<p><a href="indev.html" class="depressed">Helyettesítések</a></p>
+				<p><a href="quote.html">Idézetek</a></p>
+				<p><a href="jeloltek.html">Politika</a></p>
+			</div>
+			<div id="grid-div">
+				<p id="footer-title">Rólunk</p>
+				<p><a href="indev.html" class="depressed">Történet</a></p>
+				<p><a href="fejlesztok.html">Fejlesztők</a></p>
+			</div>
+			<div id="grid-div">
+				<p id="footer-title">Elérhetőségek</p>
+				<p>E-mail: info@ezamedia.hu</p>
+				<p>Telefon: +36 69 666 69690</p>
+				<p>Fax: +36 55 555 5555</p>
+			</div>
+		</div>
+		<div class="payment">
+			<img class="payment-img" src="static/mastercard.jpg" title="Mastercard" alt="Mastercard">
+			<img class="payment-img" src="static/maestro.jpg" title="Maestro" alt="Maestro">
+			<img class="payment-img" src="static/paypal.jpg" title="Paypal" alt="Paypal">
+			<img class="payment-img" src="static/visa.jpg" title="Visa" alt="Visa">
+			<img class="payment-img" src="static/best-in-class.jpg" title="Best in Class" alt="Best in Class">
+		</div>
+	</footer>
+	<script>
+		window.onload = function() {
+			fetch('http://ezamedia.hu/quote')
+			.then(response => response.json())
+			.then(data => {
+				document.getElementById('quote').innerText = data.quote;
+                if (data.expression) {
+                    document.getElementById('expression-box').classList.remove('hidden');
+                    document.getElementById('expressionTitle').innerText = data.expressionTitle;
+                    document.getElementById('expression').innerText = data.expression;
+                }
+			})
+			.catch(error => {
+				let container = document.getElementById('quote');
+				container.innerText = "valami nem kóser";
+			});
+		}
+	</script>
+</body>
+</html>

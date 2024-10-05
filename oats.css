@@ -1,0 +1,24 @@
+p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: .8em;
+    font-family: georgia;
+}
+
+.content {
+    padding: 15px;
+    margin:20px;
+    box-shadow: inset 0px 0px 20px rgb(0,0,0,80%);
+    border-radius: 10px;
+}
+
+#bg {
+    background-image: url("static/fat-pigs.jpg");
+    background-size: 100% 100%;  /* Stretch to fill the div (can distort) */
+    background-position: center;  /* Center the image */
+    filter: blur(8px);  /* Blur the background image */
+    opacity: 0.5;  /* Set image opacity */
+    display: flex;  /* Flexbox to center content */
+    justify-content: center;  /* Center horizontally */
+    align-items: center;  /* Center vertically */
+}
