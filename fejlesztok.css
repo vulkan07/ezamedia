@@ -12,38 +12,6 @@
 	box-shadow: 0px 0px 20px rgb(0,0,0,20%);
 }
 
-.nev {
-	font-size:25px;
-	color: #ff6000;
-	font-weight:bold;
-}
-
-.szoveg {
-	font-family: Georgia;
-	font-size:18px;
-	text-align:left;
-	padding:10px;
-}
-
-.kep {
-    width: 300px;
-}
-
-hr {
-	background:red;
-	margin-top:10px;
-	margin-bottom:15px;
-}
-
-.grid {
-    display: grid;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: space-evenly;
-}
-
 /*------------------------------------*/
 
 @media screen and (max-width: 1500px) {
