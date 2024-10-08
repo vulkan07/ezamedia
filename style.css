@@ -7,12 +7,14 @@
 	font-size: 28px;
 
 }
+
 body {
 	display: flex;
 	flex-direction: column;
 	background:#202020;
 	min-height: 100vh;
 }
+
 .centered {
 	/*position: fixed;
     top: 50%;
@@ -20,6 +22,7 @@ body {
     transform: translate(-50%, -50%);*/
 	text-align: center;
 }
+
 .unselectable {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -28,10 +31,12 @@ body {
 	-ms-user-select: none;
 	user-select: none;
 }
+
 @keyframes growIn {
 	0% {opacity: 0; font-size: 0;}
 	50% {font-size: calc(5.2vw);}
 }
+
 .depressedtext {
 	color: #9f9faf;
 }
@@ -54,15 +59,16 @@ body {
 .navbar-btn {
 	display: none;
 }
+
 .navbar {
 	z-index: 2;
 	overflow: hidden;
 	background: #353540;
+	display: flex;
 }
+
 .navbar a {
-	display: inline-flex;
-	flex-direction: row;
-	list-style: none;
+	display: inline-block;
 	text-decoration: none;
 	padding: 10px;
 	margin: 0px 12px 0px 12px;
@@ -71,16 +77,19 @@ body {
 	border-radius:5px;
 	transition-duration:.1s;
 }
+
 .navbar a.active {
 	background: #653540;
 }
+
 .navbar-btn.active {
 	background: #653540;
 }
+
 .navbar a:hover {
-	background: #653540;
-	border-radius:5px;
+	background: rgba(101, 53, 64, 0.5);
 }
+
 .btn {
     padding: 90px 40px;
     text-align: center;
@@ -94,8 +103,9 @@ body {
     animation: growIn 1.0s;
     transition-duration: 0.5s;
 }
+
 .btn:hover {
-	box-shadow: 0 00px 60px 0 rgba(255, 0, 0, 0.3);
+	box-shadow: 0px 0px 60px 0px rgba(255, 0, 0, 0.3);
 	border-radius:0px;
 	background: #50222d;
 	font-size: 5.5vw;
@@ -103,7 +113,7 @@ body {
 
 .btn:active {
 	transition-duration: 0.05s;
-	box-shadow: 0 00px 80px 0 rgba(255, 0, 0, 0.7);
+	box-shadow: 0px 0px 80px 0px rgba(255, 0, 0, 0.7);
 	font-size: 5.2vw;
 	border-radius: 10px;
 }
@@ -123,7 +133,7 @@ footer {
 	padding-bottom: 10px;
 }
 
-footer p, a {
+footer p, footer a {
 	display: block;
 	font-size: 18px;
 	margin-bottom: 4px;
@@ -147,26 +157,6 @@ footer a {
 	grid-template-columns: 1fr 1fr 1fr;
 	margin-left: 20%;
 	margin-right: 20%;
-}
-
-.payment {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	align-items: center;
-	background-color: white;
-	height: 50px;
-	margin-top: 20px;
-	padding-left: 20%;
-	padding-right: 20%;
-	padding-top: 2px;
-	padding-bottom: 2px;
-}
-
-.payment-img {
-	height: 50px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .hidden {
@@ -210,7 +200,7 @@ hr {
 /*------------------------------------*/
 
 @media screen and (max-width: 1200px) {
-	footer p, a {
+	footer p, footer a {
 		font-size: 14px;
 		margin-bottom: 3px;
 		text-indent: 2px;
@@ -225,7 +215,7 @@ hr {
 	.navbar a {
 		margin: 0px 5px 0px 5px;
 	}
-	footer p, a {
+	footer p, footer a {
 		font-size: 12px;
 		margin-bottom: 2px;
 		text-indent: 1px;
@@ -256,7 +246,12 @@ hr {
 		border-radius:2px;
 	}
 
+	.navbar-btn p {
+		margin-top: -4px;
+	}
+
 	.navbar {
+		display: block;
 		padding-top:5px;
 		position:absolute;
 		left: -100vw;
@@ -282,19 +277,6 @@ hr {
 		padding: 50px 50px;
 		font-size: 32px;
 	}
-	footer p, a {
-		font-size: 8px;
-	}
-	#footer-title {
-		font-size: 14px;
-	}
-	.payment {
-		padding-left: 10%;
-		padding-right: 10%;
-	}
-}
-
-@media screen  and (max-width: 500px) {
 	.footer-grid {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -303,10 +285,5 @@ hr {
 
 	#grid-div {
 		margin-bottom: 10px;
-	}
-
-	.payment {
-		padding-left: 5%;
-		padding-right: 5%;
 	}
 }
