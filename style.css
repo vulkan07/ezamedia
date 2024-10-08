@@ -88,7 +88,7 @@ body {
     background: #25222d;
     color: #eeeeee;
     font-size: 5vw;
-    border: 5px solid #ff0000;
+    border: 5px solid #00ff00;
     border-radius: 25px;
     cursor: pointer;
     animation: growIn 1.0s;
