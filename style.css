@@ -198,6 +198,12 @@ hr {
 	text-align:left;
 	padding:10px;
 }
+.inset {
+    background: rgb(0,0,0,20%);
+    border-radius: 6px;
+    box-shadow: inset 0px 0px 10px rgb(0,0,0,60%);
+}
+
 /*------------------------------------*/
 
 @media screen and (max-width: 1200px) {
