@@ -13,10 +13,23 @@
 }
 
 .nev {
-    margin-bottom: 15px;
 }
 
 .kep {
+}
+
+.rangok {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.rang {
+    background: rgb(230,230,255,20%);
+    border-radius: 5px;
+	box-shadow: 0px 0px 07px rgb(0,0,0,30%);
+    display: inline-block;
+    font-size:18px;
+    padding:2px 5px 2px 5px;
 }
 
 
