@@ -59,7 +59,7 @@
         </footer>
         <script>
             window.onload = function() {
-                fetch('http://ezamedia.hu/quote')
+                fetch('https://ezamedia.hu/quote')
                     .then(response => response.json())
                     .then(data => {
                         document.getElementById('quote').innerText = data.quote;
