@@ -1,60 +1,55 @@
 <!DOCTYPE html>
-<!-- teszt5 -->
 <html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" type="image/png" href="static/site_icon.png">
-    <link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="index.css">
-    <title>Ez a Média</title>
-</head>
-<body>
-	<script src="index.js"></script>
-	<header> 
-		<div class="titlebar"><a href="index.html">Ez a Média</a></div>
-		<div class="navbar-btn" onclick="toggleNavBar()"><p>☰</p></div>
-		<div class="navbar"> 
-			<a class="active" href="index.html">Ez a Média</a>
-			<a href="indev.html" class="depressed">Órarend</a>
-			<a href="indev.html" class="depressed">Helyettesítések</a>
-			<a href="quote.html">Quote of the Day</a>
-			<a href="jeloltek.html">Jelöltjeink</a>
-			<a href="sponsors.html">Szponzorok</a>
-		</div>
-	</header>
-    <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
-	<main>
-		<div class="centered">
-			<div class="btn unselectable" id="video-button" onclick="playVideo()")>Ez a Média.</div>
-			<video id="video" class="centered hidden">
-				<source src="https://shattereddisk.github.io/rickroll/rickroll.mp4" type="video/mp4">
-				Never gonna give you up...
-			</video>
-		</div>
-	</main>
-    <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
-	<footer>
-		<div class="footer-grid">
-			<div id="grid-div">
-				<p id="footer-title">Szolgáltatások</p>
-				<p><a href="indev.html" class="depressed">Órarend</a></p>
-				<p><a href="indev.html" class="depressed">Helyettesítések</a></p>
-				<p><a href="quote.html">Idézetek</a></p>
-				<p><a href="jeloltek.html">Politika</a></p>
-			</div>
-			<div id="grid-div">
-				<p id="footer-title">Rólunk</p>
-				<p><a href="indev.html" class="depressed">Történet</a></p>
-				<p><a href="fejlesztok.html">Fejlesztők</a></p>
-			</div>
-			<div id="grid-div">
-				<p id="footer-title">Elérhetőségek</p>
-				<p>E-mail: info@ezamedia.hu</p>
-				<p>Telefon: +36 69 666 6969</p>
-				<p>Fax: +36 555 555 5555</p>
-			</div>
-		</div>
-	</footer>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/png" href="static/site_icon.png">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="index.css">
+        <title>Ez a Média</title>
+    </head>
+    <body>
+        <script src="index.js"></script>
+        <header> 
+            <div class="titlebar">Ez a Média</div>
+            <div class="navbar-btn" onclick="toggleNavBar()"><p>☰</p></div>
+            <div class="navbar"> 
+                <a class="active" href="index.html">Ez a Média</a>
+                <a class="depressed unselectable">Órarend</a>
+                <a href="quote.html">Quote of the Day</a>
+                <a href="jeloltek.html">Jelöltjeink</a>
+            </div>
+        </header>
+        <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
+        <main class="centered">
+                <div class="unselectable" id="video-btn" onclick="playVideo()")>Ez a Média.</div>
+                <video id="video" class="centered hidden">
+                    <source src="https://shattereddisk.github.io/rickroll/rickroll.mp4" type="video/mp4">
+                    Never gonna give you up...
+                </video>
+        </main>
+        <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
+        <footer>
+            <div class="footer-grid">
+                <div id="grid-div">
+                    <p id="footer-title">Szolgáltatások</p>
+                    <p><a class="depressed unselectable">Órarend</a></p>
+                    <p><a href="quote.html">Idézetek</a></p>
+                    <p><a href="jeloltek.html">Politika</a></p>
+                </div>
+                <div id="grid-div">
+                    <p id="footer-title">Rólunk</p>
+                    <p><a href="tortenet.html">Történet</a></p>
+                    <p><a href="fejlesztok.html">Fejlesztők</a></p>
+                    <p><a href="szponzorok.html">Szponzorok</a></p>
+                </div>
+                <div id="grid-div">
+                    <p id="footer-title">Elérhetőségek</p>
+                    <p>E-mail: info@ezamedia.hu</p>
+                    <p>Telefon: +36 69 666 6969</p>
+                    <p>Fax: +36 555 555 5555</p>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>

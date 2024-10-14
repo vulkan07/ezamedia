@@ -15,12 +15,18 @@ body {
 	min-height: 100vh;
 }
 
+main {
+    min-height:700px; /* push footer down on phones */
+    flex: 1;
+}
+
 .centered {
-	/*position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);*/
 	text-align: center;
+}
+.vcentered {
+    /* fuck css im not using flex*/
+    margin-top: 45%;
+    margin-bottom:45%;
 }
 
 .unselectable {
@@ -32,17 +38,13 @@ body {
 	user-select: none;
 }
 
-@keyframes growIn {
-	0% {opacity: 0; font-size: 0;}
-	50% {font-size: calc(5.2vw);}
-}
-
-.depressedtext {
-	color: #9f9faf;
+.depressed {
+	color: rgb(108, 113, 115);
+    text-decoration:line-through !important;
 }
 
 .titlebar {
-	padding: 5px;
+	padding: 8px;
 	margin: 0;
 	text-align: center;	
 	font-size: 40px;
@@ -91,41 +93,7 @@ body {
 	background: rgba(101, 53, 64, 0.5);
 }
 
-.btn {
-    padding: 90px 40px;
-    text-align: center;
-    display: inline-block;
-    background: #25222d;
-    color: #eeeeee;
-    font-size: 5vw;
-    border: 5px solid #ff0022;
-    border-radius: 25px;
-    cursor: pointer;
-    animation: growIn 1.0s;
-    transition-duration: 0.5s;
-}
 
-.btn:hover {
-	box-shadow: 0px 0px 60px 0px rgba(255, 0, 0, 0.3);
-	border-radius:0px;
-	background: #50222d;
-	font-size: 5.5vw;
-}
-
-.btn:active {
-	transition-duration: 0.05s;
-	box-shadow: 0px 0px 80px 0px rgba(255, 0, 0, 0.7);
-	font-size: 5.2vw;
-	border-radius: 10px;
-}
-
-.depressed {
-	color: rgb(108, 113, 115);
-}
-
-main {
-	flex: 1;
-}
 
 footer {
 	background: linear-gradient(90deg, #252530 20%, #303042 50%, #252530 80%);
@@ -138,7 +106,7 @@ footer p, footer a {
 	display: block;
 	font-size: 18px;
 	margin-bottom: 4px;
-	text-indent: 3px;
+	text-indent: 5px;
 	font-weight: 300;
 	text-decoration: none;
 }
@@ -161,8 +129,7 @@ footer a {
 }
 
 .hidden {
-	display: none;
-	background: blue;
+	display: none !important;
 }
 
 .kep {

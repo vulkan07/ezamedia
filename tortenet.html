@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/png" href="static/site_icon.png">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="quote.css">
-        <title>Quote of the Day</title>
+        <link rel="stylesheet" href="tortenet.css">
+        <title>Ez a Média Története</title>
     </head>
     <body>
         <script src="index.js"></script>
         <header> 
-            <div class="titlebar">Quote of the Day</div>
+            <div class="titlebar">Ez a Média Története</div>
             <div class="navbar-btn" onclick="toggleNavBar()"><p>☰</p></div>
             <div class="navbar"> 
                 <a href="index.html">Ez a Média</a>
@@ -22,17 +22,9 @@
         </header>
         <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
         <main>
-            <div class="box">
-                <p> <span class="quote-sign">„ </span><span class="field" id="quote"></span><span class="quote-sign"> ”</span></p>
-            </div>
-            <div class="box hidden" id="expression-box">
-                <div>
-                    <p><span id="expressionTitle"></span><br><span class="quote-sign">„ </span><span class="field" id="expression"></span><span class="quote-sign"> ”</span></p>
-                </div>
-            </div>
-            <div class="box" id="explanation-box">
-                <p id="explanation">Az élet bölcsességei összegyűjtve csak most, csak neked.</p>
-            </div>
+            <p class="inset">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            </p>
         </main>
         <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
         <footer>
@@ -57,23 +49,5 @@
                 </div>
             </div>
         </footer>
-        <script>
-            window.onload = function() {
-                fetch('http://ezamedia.hu/quote')
-                    .then(response => response.json())
-                    .then(data => {
-                        document.getElementById('quote').innerText = data.quote;
-                        if (data.expression) {
-                            document.getElementById('expression-box').classList.remove('hidden');
-                            document.getElementById('expressionTitle').innerText = data.expressionTitle;
-                            document.getElementById('expression').innerText = data.expression;
-                        }
-                    })
-                    .catch(error => {
-                        let container = document.getElementById('quote');
-                        container.innerText = "valami nem kóser";
-                    });
-            }
-        </script>
     </body>
 </html>

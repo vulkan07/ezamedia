@@ -1,5 +1,6 @@
-#video-button {
-	margin-top: 20vh;
+@keyframes growIn {
+	0% {opacity: 0; font-size: 0;}
+	50% {font-size: calc(5.2vw);}
 }
 
 #video {
@@ -9,8 +10,34 @@
 	margin-top: 5px;
 }
 
-.kep {
-    width: 50px;
+#video-btn {
+    padding: 90px 40px;
+    text-align: center;
+    display: inline-block;
+    background: #25222d;
+    color: #eeeeee;
+    font-size: 5vw;
+    border: 5px solid #ff0022;
+    border-radius: 25px;
+    cursor: pointer;
+    animation: growIn 1.0s;
+    transition-duration: 0.5s;
+
+    margin-top: 20vh;
+}
+
+#video-btn:hover {
+	box-shadow: 0px 0px 60px 0px rgba(255, 0, 0, 0.3);
+	border-radius:0px;
+	background: #50222d;
+	font-size: 5.5vw;
+}
+
+#video-btn:active {
+	transition-duration: 0.05s;
+	box-shadow: 0px 0px 80px 0px rgba(255, 0, 0, 0.7);
+	font-size: 5.2vw;
+	border-radius: 10px;
 }
 
 /*------------------------------------*/
