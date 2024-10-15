@@ -16,7 +16,7 @@ body {
 }
 
 main {
-    min-height:700px; /* push footer down on phones */
+    /*min-height:700px; its already down on phones this just creates a huge random gap */
     flex: 1;
 }
 
@@ -25,6 +25,8 @@ main {
 }
 .vcentered {
     /* fuck css im not using flex*/
+	/* the the f do you even use this class*/
+	/* and flex is great its so much easier*/
     margin-top: 45%;
     margin-bottom:45%;
 }
