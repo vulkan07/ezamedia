@@ -8,23 +8,44 @@
 		<title>404 Not Found</title>
 	</head>
 	<body>
-		<div>
-			<script src="index.js"></script>
-			<div class="header"> 
-				<div class="titlebar" style="color:#df7474">404 Not Found</div>
-				<div class="navbar-btn active" onclick="toggleNavBar()"><p>☰</p></div>
-				<div class="navbar active"> 
-					<a href="index.html">Ez a Média</a>
-					<a href="orarend.html">Órarend</a>
-					<a href="substitutions.html">Helyettesítések</a>
-				</div>
+		<script src="index.js"></script>
+		<header> 
+			<div class="titlebar" style="color:#df7474"><h1>404 Not Found</h1></div>
+			<div class="navbar-btn" onclick="toggleNavBar()"><p>☰</p></div>
+			<div class="navbar"> 
+				<a class="active" href="index.html">Ez a Média</a>
+				<a class="depressed unselectable">Órarend</a>
+				<a href="quote.html">Quote of the Day</a>
+				<a href="jeloltek.html">Jelöltjeink</a>
 			</div>
-			<div class="content">
-				<div style="display:block">
-					<img class="image centered" style="width:200px" src="static/sad.png"\>
-					<a style="display:block;text-align:center;margin-top:20vh;">womp womp</p>
-				</div>
+		</header>
+		<main>
+			<div style="display:block">
+				<img class="image centered" style="width:200px" src="static/sad.png"\>
+				<a style="display:block;text-align:center;margin-top:20vh;">womp womp</p>
 			</div>
-		</div>
+		</main>
+        <footer>
+            <div class="footer-grid">
+                <div id="grid-div">
+                    <p id="footer-title">Szolgáltatások</p>
+                    <p><a class="depressed unselectable">Órarend</a></p>
+                    <p><a href="quote.html">Idézetek</a></p>
+                    <p><a href="jeloltek.html">Politika</a></p>
+                </div>
+                <div id="grid-div">
+                    <p id="footer-title">Rólunk</p>
+                    <p><a href="tortenet.html">Történet</a></p>
+                    <p><a href="fejlesztok.html">Fejlesztők</a></p>
+                    <p><a href="szponzorok.html">Szponzorok</a></p>
+                </div>
+                <div id="grid-div">
+                    <p id="footer-title">Elérhetőségek</p>
+                    <p>E-mail: info@ezamedia.hu</p>
+                    <p>Telefon: +36 69 666 6969</p>
+                    <p>Fax: +36 555 555 5555</p>
+                </div>
+            </div>
+        </footer>
 	</body>
 </html>
