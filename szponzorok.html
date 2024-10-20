@@ -6,18 +6,23 @@
         <link rel="shortcut icon" type="image/png" href="static/site_icon.png">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="szponzorok.css">
-        <title>Ez a Média</title>
+        <title>Szponzoraink</title>
     </head>
     <body>
         <script src="index.js"></script>
         <header> 
-            <div class="titlebar"><h1>Szponzorok</h1></div>
-            <div class="navbar-btn" onclick="toggleNavBar()"><p>☰</p></div>
-            <div class="navbar"> 
-                <a href="index.html">Ez a Média</a>
-                <a class="depressed unselectable">Órarend</a>
-                <a href="quote.html">Quote of the Day</a>
-                <a href="jeloltek.html">Jelöltjeink</a>
+            <div class="titlebar">
+                <div id="title-image-div">
+                    <div class="navbar-btn" onclick="toggleNavBar()"><img src="static/site_icon.png"></div>
+                    <img id="site-icon" src="static/site_icon.png">
+                    <h1>Szponzoraink</h1>
+                </div>
+                <div class="navbar"> 
+                    <a href="index.html">Ez a Média</a>
+                    <a href="orarend.html">Órarend<span class="beta-icon">BETA</span></a>
+                    <a href="quote.html">Quote of the Day</a>
+                    <a href="jeloltek.html">Jelöltjeink</a>
+                </div>
             </div>
         </header>
         <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
@@ -26,26 +31,26 @@
                 <div class="sponsor">
                     <p class="nev">Fidesz</p>
                     <hr>
-                    <img class="kep" src="static/fidesz.jpg" title="Fidesz" alt="Fidesz">
+                    <img class="tile-img" src="static/fidesz.jpg" title="Fidesz" alt="Fidesz">
                 </div>
                 <div class="sponsor">
                     <p class="nev">Szőke Mátyás</p>
                     <hr>
-                    <img class="kep" src="static/szmatyi2.jpg" title="Szőke Mátyás" alt="Szőke Mátyás">
+                    <img class="tile-img" src="static/szmatyi2.jpg" title="Szőke Mátyás" alt="Szőke Mátyás">
                 </div>
                 <div class="sponsor">
                     <p class="nev">MÁV-START</p>
                     <hr>
-                    <img class="kep" src="static/mav.jpg" title="MÁV-START" alt="MÁV-START">
+                    <img class="tile-img" src="static/mav.jpg" title="MÁV-START" alt="MÁV-START">
                 </div>
                 <div class="sponsor">
                     <p class="nev">Skibidi Bop</p>
                     <hr>
-                    <img class="kep" src="static/skibidi-bop.jpg" title="Skibidi Bop" alt="Skibidi Bop">
+                    <img class="tile-img" src="static/skibidi-bop.jpg" title="Skibidi Bop" alt="Skibidi Bop">
                 </div><div class="sponsor">
                     <p class="nev">Hecker</p>
                     <hr>
-                    <img class="kep" src="static/hecker.jpg" title="Hecker" alt="Hecker">
+                    <img class="tile-img" src="static/hecker.jpg" title="Hecker" alt="Hecker">
                 </div>
             </div>
         </main>
@@ -54,7 +59,6 @@
             <div class="footer-grid">
                 <div id="grid-div">
                     <p id="footer-title">Szolgáltatások</p>
-                    <p><a class="depressed unselectable">Órarend</a></p>
                     <p><a href="quote.html">Idézetek</a></p>
                     <p><a href="jeloltek.html">Politika</a></p>
                 </div>

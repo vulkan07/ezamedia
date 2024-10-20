@@ -11,52 +11,57 @@
     <body>
         <script src="index.js"></script>
         <header> 
-            <div class="titlebar"><h1>Fejlesztőink</h1></div>
-            <div class="navbar-btn" onclick="toggleNavBar()"><p>☰</p></div>
-            <div class="navbar"> 
-                <a href="index.html">Ez a Média</a>
-                <a class="depressed unselectable">Órarend</a>
-                <a href="quote.html">Quote of the Day</a>
-                <a href="jeloltek.html">Jelöltjeink</a>
+            <div class="titlebar">
+                <div id="title-image-div">
+                    <div class="navbar-btn" onclick="toggleNavBar()"><img src="static/site_icon.png"></div>
+                    <img id="site-icon" src="static/site_icon.png">
+                    <h1>Fejlesztőink</h1>
+                </div>
+                <div class="navbar"> 
+                    <a href="index.html">Ez a Média</a>
+                    <a href="orarend.html">Órarend<span class="beta-icon">BETA</span></a>
+                    <a href="quote.html">Quote of the Day</a>
+                    <a href="jeloltek.html">Jelöltjeink</a>
+                </div>
             </div>
         </header>
         <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
         <main>
             <div class="grid">
                 <div class="fejleszto">
-                    <p class="nev">Oláh-Bozó Barnabás</p>
+                    <p class="tile-title">Oláh-Bozó Barnabás</p>
                     <div class="rangok">
                         <p class="rang" style="background:#aa0000">Vezérigazgató</p>
                         <p class="rang" style="background:#229922">Developer</p>
                     </div>
                     <hr>
-                    <img class="kep" src="static/bozo.jpg" title="Oláh-Bozó Barnabás" alt="Oláh-Bozó Barnabás">
+                    <img class="tile-img" src="static/bozo.jpg" title="Oláh-Bozó Barnabás" alt="Oláh-Bozó Barnabás">
                 </div>
                 <div class="fejleszto">
-                    <p class="nev">Pető Balázs</p>
+                    <p class="tile-title">Pető Balázs</p>
                     <div class="rangok">
                         <p class="rang" style="background:#229922">Developer</p>
                     </div>
                     <hr>
-                    <img class="kep" src="static/peto.jpg" title="Pető Balázs" alt="Pető Balázs">
+                    <img class="tile-img" src="static/peto.jpg" title="Pető Balázs" alt="Pető Balázs">
                 </div>
                 <div class="fejleszto">
-                    <p class="nev">Pilisy Botond</p>
+                    <p class="tile-title">Pilisy Botond</p>
                     <div class="rangok">
                         <p class="rang" style="background:#aa0044">Co-Founder</p>
                     </div>
                     <hr>
-                    <img class="kep" src="static/botond.jpg" title="Pilisy Botond" alt="Pilisy Botond">
+                    <img class="tile-img" src="static/botond.jpg" title="Pilisy Botond" alt="Pilisy Botond">
                 </div>
                 <div class="fejleszto">
-                    <p class="nev">Ács Bence</p>
+                    <p class="tile-title">Ács Bence</p>
                     <div class="rangok">
                         <p class="rang" style="background:#ea0075">Költő</p>
                         <p class="rang" style="background:#ea0075">Író</p>
                         <p class="rang" style="background:#ea0075">Múzsa</p>
                     </div>
                     <hr>
-                    <img class="kep" src="static/bence.jpg" title="Ács Bence" alt="Ács Bence">
+                    <img class="tile-img" src="static/bence.jpg" title="Ács Bence" alt="Ács Bence">
                 </div>
             </div>
         </main>
@@ -65,7 +70,6 @@
             <div class="footer-grid">
                 <div id="grid-div">
                     <p id="footer-title">Szolgáltatások</p>
-                    <p><a class="depressed unselectable">Órarend</a></p>
                     <p><a href="quote.html">Idézetek</a></p>
                     <p><a href="jeloltek.html">Politika</a></p>
                 </div>

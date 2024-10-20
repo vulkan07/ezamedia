@@ -44,6 +44,7 @@ body {
 main {
 	display: flex;
     height:100%;
+    overflow:auto;
 }
 
 
@@ -108,22 +109,37 @@ hr {
     font-weight: bold;
     background: #0059b3;
     padding:4px;
-    margin:4px;
+    margin-left:5px;
     border-radius:4px;
     vertical-align:middle;
 }
 
 /* ----------- Titlebar & Navbar ----------- */
 
+#site-icon {
+    width:2em;
+    padding:0px 14px;
+}
+
+#title-image-div {
+    display:flex;
+    align-items: center;
+}
+
 .titlebar {
 	padding: 10px;
 	margin: 0;
-	text-align: center;	
 	background: var(--background-row-gradient);
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
 .titlebar h1 {
-    font-size: 1.5em;
-    font-weight: normal;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin:2px;
 }
 
 .navbar-btn {
@@ -135,16 +151,13 @@ hr {
 	overflow: hidden;
 	display: flex;
 
-    margin:10px;
-    padding:8px;
-    border-radius:6px;
-    background: var(--background3);
 }
 
 .navbar a {
     background: linear-gradient(0deg, #353540 0%, #383850 100%);
 
-	display: inline-block;
+	display: inline-flex;
+    align-items:center;
 	text-decoration: none;
 	padding: 9px 12px;
 	margin: 0px 10px 0px 10px;
@@ -244,53 +257,72 @@ footer a:hover {
 }
 
 @media screen and (max-width: 768px) {
-	.titlebar {
-		font-size:1.3em;
-		padding-left:60px;
-		padding-right:60px;
-	}
-	.navbar-btn {
-		display: block;
-		position:absolute;
-        left:0.6em;
-        top:0.6em;
+    #site-icon {
+        display: none;
+    }
 
+	.titlebar {
+        flex-direction:column;
+        align-items: stretch;
+        padding-left: 20px;
+        padding-right: 20px;
+	}
+
+	.titlebar h1 {
+        font-size: 1.3em;
+        max-width:60vw;
+        text-align:right;
+	}
+
+    #title-image-div {
+        display:inline-flex;
+        justify-content:space-between;
+        width:100%;
+        
+    }
+
+	.navbar-btn {
+        display:flex;
 		text-align: center;
 		background: #353540;
 		border-radius:4px;
 
-		width: 1.5em;
-		height: 1.5em;
+		width: 1.8em;
+		height: 1.8em;
 	}
 
-	.navbar-btn p {
-		font-size: 1.2em;
-
+	.navbar-btn img {
+        width: inherit;
 	}
 
 	.navbar {
-
-		display: block;
-		position:absolute;
-		left: -100vw;
-		transition-duration: 0.4s;
-		background: transparent;
+        margin-top:8px;
+        flex-direction:column;
 	}
 	.navbar a {
 		display: flex;
 		flex-direction: row;
 		list-style: none;
 		text-decoration: none;
-		padding: 10px 14px;
-		margin: 0px 16px 6px 12px;
-		font-size: 1em;
-		/*background: #353540;*/
+
+		padding: 0;
+		margin: 0;
+		font-size: 0;
+        height:0;
+
         background: linear-gradient(0deg, #353540 0%, #383850 100%);
         box-shadow: 0px 0px 15px rgb(0,0,0,30%);
+
+        transition-duration: 0.25s;
 	}
-	.navbar.active {
-		left: 0;
+
+	.navbar.active a {
+		padding: 10px 14px;
+		margin: 06px 0px;
+		font-size: 1em;
+        height:unset;
 	}
+
 	.btn {
 		padding: 50px 50px;
 		font-size: 32px;

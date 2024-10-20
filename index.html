@@ -12,14 +12,17 @@
         <script src="index.js"></script>
         <header> 
             <div class="titlebar">
-                <div class="navbar-btn" onclick="toggleNavBar()"><p>☰</p></div>
-                <h1>Ez a Média</h1>
-            </div>
-            <div class="navbar"> 
-                <a class="active" href="index.html">Ez a Média</a>
-                <a href="orarend.html">Órarend<span class="beta-icon">BETA</span></a>
-                <a href="quote.html">Quote of the Day</a>
-                <a href="jeloltek.html">Jelöltjeink</a>
+                <div id="title-image-div">
+                    <div class="navbar-btn" onclick="toggleNavBar()"><img src="static/site_icon.png"></div>
+                    <img id="site-icon" src="static/site_icon.png">
+                    <h1>Ez a Média</h1>
+                </div>
+                <div class="navbar"> 
+                    <a class="active" href="index.html">Ez a Média</a>
+                    <a href="orarend.html">Órarend<span class="beta-icon">BETA</span></a>
+                    <a href="quote.html">Quote of the Day</a>
+                    <a href="jeloltek.html">Jelöltjeink</a>
+                </div>
             </div>
         </header>
         <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
@@ -35,7 +38,6 @@
             <div class="footer-grid">
                 <div id="grid-div">
                     <p id="footer-title">Szolgáltatások</p>
-                    <p><a href="orarend.html">Órarend</a></p>
                     <p><a href="quote.html">Idézetek</a></p>
                     <p><a href="jeloltek.html">Politika</a></p>
                 </div>
