@@ -18,6 +18,7 @@ main {
 
 #video-btn {
     padding: 70px 40px;
+    margin:30px;
     max-width:30vw;
     max-height:30vh;
     background: var(--background-tile-gradient);
