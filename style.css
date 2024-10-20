@@ -36,15 +36,16 @@
 body {
 	display: flex;
 	flex-direction: column;
-    height:100vh;
+    min-height:100vh;
 
 	background: var(--background1);
 }
 
 main {
 	display: flex;
+    flex:1;
     height:100%;
-    overflow:auto;
+    /* overflow:auto; */  /* causes havoc on mobile */
 }
 
 
@@ -74,9 +75,8 @@ main {
 }
 
 .tile-img {
-    width: 300px;
-    min-height: 300px;
-    max-height: 300px;
+    aspect-ratio: 1;
+    width:inherit;
 }
 
 .tile-title {
@@ -140,6 +140,8 @@ hr {
     font-size: 1.1em;
     font-weight: bold;
     margin:2px;
+    align-items:center;
+    display:flex;
 }
 
 .navbar-btn {
@@ -296,9 +298,14 @@ footer a:hover {
 	}
 
 	.navbar {
+        margin-top:0;
+        flex-direction:column;
+	}
+	.navbar.active {
         margin-top:8px;
         flex-direction:column;
 	}
+
 	.navbar a {
 		display: flex;
 		flex-direction: row;
