@@ -11,11 +11,13 @@
     <body>
         <script src="index.js"></script>
         <header> 
-            <div class="titlebar"><h1>Ez a Média</h1></div>
-            <div class="navbar-btn" onclick="toggleNavBar()"><p>☰</p></div>
+            <div class="titlebar">
+                <div class="navbar-btn" onclick="toggleNavBar()"><p>☰</p></div>
+                <h1>Ez a Média</h1>
+            </div>
             <div class="navbar"> 
                 <a class="active" href="index.html">Ez a Média</a>
-                <a class="depressed unselectable">Órarend</a>
+                <a href="orarend.html">Órarend<span class="beta-icon">BETA</span></a>
                 <a href="quote.html">Quote of the Day</a>
                 <a href="jeloltek.html">Jelöltjeink</a>
             </div>
@@ -23,7 +25,7 @@
         <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
         <main>
                 <div class="unselectable" id="video-btn" onclick="playVideo()")>Ez a Média.</div>
-                <video id="video" class="centered hidden">
+                <video id="video" class="hidden">
                     <source src="https://shattereddisk.github.io/rickroll/rickroll.mp4" type="video/mp4">
                     Never gonna give you up...
                 </video>
@@ -33,7 +35,7 @@
             <div class="footer-grid">
                 <div id="grid-div">
                     <p id="footer-title">Szolgáltatások</p>
-                    <p><a class="depressed unselectable">Órarend</a></p>
+                    <p><a href="orarend.html">Órarend</a></p>
                     <p><a href="quote.html">Idézetek</a></p>
                     <p><a href="jeloltek.html">Politika</a></p>
                 </div>

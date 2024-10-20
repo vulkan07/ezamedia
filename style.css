@@ -1,35 +1,54 @@
+/* Website Color Scheme */
+:root {
+    
+    --text:white;
+
+    --accent: #9f131b;
+    --background-accent: #9f131b;
+
+    --text-depressed:#909096;
+    --background-depressed: #404048;
+
+    --background1: #232020;
+    --background2: #353540;
+    --background3: #262631;
+    --background4: #303042;
+    --background-tile-gradient: linear-gradient(0deg, var(--background3) 0%, var(--background4) 100%);
+	--background-row-gradient: linear-gradient(90deg, var(--background3) 20%, var(--background4) 40%, var(--background4) 60%, var(--background3) 80%);
+    
+}
+
+
+
+/* ------------ Core Page Structure -------- */
+
 * {
 	padding: 0px;
 	margin: 0px;
-	background: transparent;
-	color: #efefef;
+
 	font-family: arial;
 	font-size: 28px;
 
+	color: var(--text);
+	background: transparent;
 }
 
 body {
 	display: flex;
 	flex-direction: column;
-	background:#202020;
-	min-height: 100vh;
+    height:100vh;
+
+	background: var(--background1);
 }
 
 main {
-    /*min-height:700px; its already down on phones this just creates a huge random gap */
-    flex: 1;
+	display: flex;
+    height:100%;
 }
 
-.centered {
-	text-align: center;
-}
-.vcentered {
-    /* fuck css im not using flex*/
-	/* the the f do you even use this class*/
-	/* and flex is great its so much easier*/
-    margin-top: 45%;
-    margin-bottom:45%;
-}
+
+
+/* ------------ Common Classes ------------- */
 
 .unselectable {
 	-webkit-touch-callout: none;
@@ -40,25 +59,71 @@ main {
 	user-select: none;
 }
 
+/* overrides other styles if depressed with !important */
 .depressed {
-	color: rgb(108, 113, 115);
+	color: var(--text-depressed) !important;
     text-decoration:line-through !important;
 }
-
-.titlebar {
-	padding: 8px;
-	margin: 0;
-	text-align: center;	
-	font-size: 40px;
-	/*background: #252530;*/
-	background: linear-gradient(90deg, #252530 20%, #303042 50%, #252530 80%);
+.depressed:hover {
+    background:var(--background-depressed) !important;
 }
 
-.titlebar a {
-	font-size: inherit;
-	display: inline;
-	color: inherit;
-	text-decoration: none;
+.hidden {
+	display: none !important;
+}
+
+.tile-img {
+    width: 300px;
+    min-height: 300px;
+    max-height: 300px;
+}
+
+.tile-title {
+	font-size:25px;
+	color: #ff6000;
+	font-weight:bold;
+}
+
+hr {
+	background:red;
+	margin-top:10px;
+	margin-bottom:15px;
+}
+
+.szoveg {
+	font-family: Georgia;
+	font-size:18px;
+	text-align:left;
+	padding:10px;
+}
+
+.inset {
+    background: rgb(0,0,0,20%);
+    border-radius: 6px;
+    box-shadow: inset 0px 0px 10px rgb(0,0,0,60%);
+}
+
+.beta-icon {
+    font-size: 0.65em;
+    font-weight: bold;
+    background: #0059b3;
+    padding:4px;
+    margin:4px;
+    border-radius:4px;
+    vertical-align:middle;
+}
+
+/* ----------- Titlebar & Navbar ----------- */
+
+.titlebar {
+	padding: 10px;
+	margin: 0;
+	text-align: center;	
+	background: var(--background-row-gradient);
+}
+.titlebar h1 {
+    font-size: 1.5em;
+    font-weight: normal;
 }
 
 .navbar-btn {
@@ -68,23 +133,27 @@ main {
 .navbar {
 	z-index: 2;
 	overflow: hidden;
-	background: #353540;
 	display: flex;
+
+    margin:10px;
+    padding:8px;
+    border-radius:6px;
+    background: var(--background3);
 }
 
 .navbar a {
+    background: linear-gradient(0deg, #353540 0%, #383850 100%);
+
 	display: inline-block;
 	text-decoration: none;
-	padding: 10px;
-	margin: 0px 12px 0px 12px;
-	font-size: 16px;
-	background: transparent;
+	padding: 9px 12px;
+	margin: 0px 10px 0px 10px;
+	font-size: 0.65em;
 	border-radius:5px;
-	transition-duration:.1s;
 }
 
 .navbar a.active {
-	background: #653540;
+	background: var(--background-accent);
 }
 
 .navbar-btn.active {
@@ -95,8 +164,11 @@ main {
 	background: rgba(101, 53, 64, 0.5);
 }
 
+
+/* -------------- Footer ------------------- */
+
 footer {
-	background: linear-gradient(90deg, #252530 20%, #303042 50%, #252530 80%);
+	background: var(--background3);
 	width: 100%;
 	padding-top: 20px;
 	padding-bottom: 10px;
@@ -132,28 +204,6 @@ footer a:hover {
 	margin-right: 20%;
 }
 
-.hidden {
-	display: none !important;
-}
-
-.kep {
-    width: 300px;
-    min-height: 300px;
-    max-height: 300px;
-}
-
-.nev {
-	font-size:25px;
-	color: #ff6000;
-	font-weight:bold;
-}
-
-hr {
-	background:red;
-	margin-top:10px;
-	margin-bottom:15px;
-}
-
 .grid {
     display: grid;
     width: 80%;
@@ -163,24 +213,6 @@ hr {
     justify-content: space-evenly;
 }
 
-.szoveg {
-	font-family: Georgia;
-	font-size:18px;
-	text-align:left;
-	padding:10px;
-}
-.inset {
-    background: rgb(0,0,0,20%);
-    border-radius: 6px;
-    box-shadow: inset 0px 0px 10px rgb(0,0,0,60%);
-}
-
-.titlebar h1 {
-	font-size: inherit;
-	font-weight: inherit;
-	margin: 0;
-	padding: 0;
-}
 
 /*------------------------------------*/
 
@@ -213,31 +245,32 @@ hr {
 
 @media screen and (max-width: 768px) {
 	.titlebar {
-		font-size:42px;
+		font-size:1.3em;
 		padding-left:60px;
 		padding-right:60px;
 	}
 	.navbar-btn {
 		display: block;
 		position:absolute;
-		top:0;
-		font-size: 28px;
-		margin: 12px;
-		width:30px;
-		height:30px;
-		text-align:center;
-		padding: 5px;
+        left:0.6em;
+        top:0.6em;
+
+		text-align: center;
 		background: #353540;
-		border-radius:2px;
+		border-radius:4px;
+
+		width: 1.5em;
+		height: 1.5em;
 	}
 
 	.navbar-btn p {
-		margin-top: -4px;
+		font-size: 1.2em;
+
 	}
 
 	.navbar {
+
 		display: block;
-		padding-top:5px;
 		position:absolute;
 		left: -100vw;
 		transition-duration: 0.4s;
@@ -245,12 +278,12 @@ hr {
 	}
 	.navbar a {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		list-style: none;
 		text-decoration: none;
 		padding: 10px 14px;
 		margin: 0px 16px 6px 12px;
-		font-size: 26px;
+		font-size: 1em;
 		/*background: #353540;*/
         background: linear-gradient(0deg, #353540 0%, #383850 100%);
         box-shadow: 0px 0px 15px rgb(0,0,0,30%);

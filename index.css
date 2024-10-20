@@ -1,34 +1,44 @@
 @keyframes growIn {
-	0% {opacity: 0; font-size: 0;}
-	50% {font-size: calc(5.2vw);}
+	0% {opacity: 0; font-size: 1em;}
+	40% {font-size: 2.8em;}
+}
+
+main {
+    align-items: center;
+    justify-content:center;
+    overflow: hidden;
 }
 
 #video {
-	width: 100vh;	
+    max-width: 90%; /* to fit on mobile */
+    max-height: 90%; /* to fit inside main */
 	box-shadow: 0px 0px 100px 0 black;
     animation: growIn 0.4s;
-	margin-top: 5px;
 }
 
 #video-btn {
-    padding: 90px 40px;
-    display: inline-block;
-    background: #25222d;
-    color: #eeeeee;
-    font-size: 5vw;
-    border: 5px solid #ff0022;
-    border-radius: 25px;
+    padding: 70px 40px;
+    max-width:30vw;
+    max-height:30vh;
+    background: var(--background-tile-gradient);
+
+    text-align:center;
+
+    font-size: 2.5em;
     cursor: pointer;
+    color: #eeeeee;
+    border: 5px solid var(--accent);
+    border-radius: 25px;
+
     animation: growIn 1.0s;
     transition-duration: 0.5s;
-	height: fit-content;
 }
 
 #video-btn:hover {
 	box-shadow: 0px 0px 60px 0px rgba(255, 0, 0, 0.3);
 	border-radius:0px;
 	background: #50222d;
-	font-size: 5.5vw;
+    font-size: 2.8em;
 }
 
 #video-btn:active {
@@ -38,23 +48,22 @@
 	border-radius: 10px;
 }
 
-main {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 
 /*------------------------------------*/
 
 @media screen and (max-width: 1024px) {
-	#video {
-		width: 70vh;
-	}
 }
 
 @media screen and (max-width: 768px) {
-	#video { 
-		width: 40vh;	
-		box-shadow: 0px 0px 100px 0 black;
-	}
+    #video-btn {
+        font-size: 1.3em;
+        max-width:85vw;
+    }
+    #video-btn:hover {
+        font-size: 1.5em;
+    }
+    @keyframes growIn {
+        0% {opacity: 0; font-size: 0em;}
+        40% {font-size: 1.5em;}
+    }
 }
