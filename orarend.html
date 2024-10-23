@@ -10,6 +10,7 @@
     </head>
     <body>
         <script src="index.js"></script>
+        <script src="orarend.js"></script>
         <header> 
             <div class="titlebar">
                 <div id="title-image-div">
@@ -27,31 +28,31 @@
         </header>
         <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
         <main>
-            <div class="box" id="explanation-box">
-                <p id="explanation">Ez az oldal még <span class="beta-icon">BÉTA</span> módban van, fejlesztés alatt.<hr>Hamarosan lesz előnézet.</p>
+            <div id="notice-div">
+                <p>Ez az oldal még fejlesztés alatt van.</p>
+                <button onmouseup="closeNotice()">OK</button>
+            </div>
+            <div id="table-div">
+            </div>
+            <div id="day-div">
+                <h2 id="day-title">Hétfő</h2>
+                <img id="spinner" src="static/spinner.gif">
             </div>
         </main>
         <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
-        <footer>
-            <div class="footer-grid">
-                <div id="grid-div">
-                    <p id="footer-title">Szolgáltatások</p>
-                    <p><a href="quote.html">Idézetek</a></p>
-                    <p><a href="jeloltek.html">Politika</a></p>
-                </div>
-                <div id="grid-div">
-                    <p id="footer-title">Rólunk</p>
-                    <p><a href="tortenet.html">Történet</a></p>
-                    <p><a href="fejlesztok.html">Fejlesztők</a></p>
-                    <p><a href="szponzorok.html">Szponzorok</a></p>
-                </div>
-                <div id="grid-div">
-                    <p id="footer-title">Elérhetőségek</p>
-                    <p>E-mail: info@ezamedia.hu</p>
-                    <p>Telefon: +36 69 666 6969</p>
-                    <p>Fax: +36 555 555 5555</p>
+        <!-- 
+            1. period div
+            2. lessons-div div
+            3. lesson divs
+        -->
+        <template>
+            <div class="lesson">
+                <div class="field-targy"></div>
+                <div class="lesson-bottom-div">
+                    <div class="field-terem"></div>
+                    <div class="field-tanar"></div>
                 </div>
             </div>
-        </footer>
+        </template>
     </body>
 </html>

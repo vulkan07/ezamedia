@@ -1,25 +1,160 @@
-/* copy pasted css, will be rewritten later */
-main {
-	display:block;
-	justify-content: center;
-	align-items: center;
+:root {
+    --accent2: #a45821;
+
+    --bg1: #2a2a80;
+    --bg2: #6464ee;
+
+    --bg3: #312626;
+    --bg4: #4d2424;
+
+    --background-active-gradient: linear-gradient(0deg, var(--bg1) 0%, var(--bg2) 100%);
+    --background-cancelled-gradient: linear-gradient(0deg, transparent 0%, var(--background2) 100%);
+    --background-changed-gradient: linear-gradient(0deg, var(--background4) 0%, var(--bg4) 100%);
 }
 
-.box {
+main {
+    flex-direction:column;
+}
+
+#spinner {
+  width:40px;
+  margin:auto;
+  mix-blend-mode: plus-lighter;
+}
+
+#notice-div {
 	margin:30px;
 	margin-left:auto;
 	margin-right:auto;
-	padding:20px;
-    width:85vw;
+	padding: 10px;
+
+    width:75vw;
     max-width:600px;
+
+    height: fit-content;
+
 	text-align:center;
 
-	background: rgba(37, 37, 48, .3);
+	background: var(--background-tile-gradient);
 	border-radius: 6px;
-	box-shadow: 0px 0px 20px rgb(0,0,0,20%);
-    font-size: 1.2em;
+	box-shadow: 0px 0px 15px rgb(0,0,0,50%);
+    font-size: 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+#notice-div p {
+    font-size: .9em;
+}
+#notice-div > * {
+    padding: 10px;
+    width:fit-content;
+}
+#notice-div button {
+    background: var(--background4);
+    padding:4px 10px;
+    border: 4px solid var(--accent);
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: .8em;
+}
+#notice-div button:hover {
+    background: var(--background-accent);
+}
+#notice-div button:active {
+    background: var(--background-depressed);
+    border-color: white;
 }
 
-#explanation {
-    font-size: 0.8em;
+
+/*----------------------------------------------*/
+
+
+#day-div {
+    display: flex;
+    flex-direction: column;
+}
+
+#day-title {
+    text-align:center;
+    margin:15px;
+    font-size:1.3em;
+}
+
+
+.period {
+    display:flex;
+    flex-direction:column;
+    max-width:400px;
+    margin:auto;
+    margin-bottom:10px;
+    padding: 0px 5px;
+    width:-webkit-fill-available;
+}
+.periods-div {
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    align-items:center; /* fix borderless alignment */
+}
+
+
+.lesson {
+    height:fit-content;
+    width: inherit;
+
+    margin:0px 5px;
+	padding: 10px;
+
+	background: var(--background-tile-gradient);
+	border-radius: 5px;
+	box-shadow: 0px 0px 8px rgb(0,0,0,30%);
+    font-size: 1.1em;
+}
+
+.field-targy {
+    font-weight:bold;
+    text-align:center;
+    padding: 15px 5px;
+}
+
+.lesson-bottom-div {
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    max-width:200px;
+    margin:auto;
+}
+.lesson-bottom-div > div {
+    font-size: .75em;
+    padding:2px 4px;
+}
+
+
+.lesson.cancelled {
+	background: var(--background-cancelled-gradient);
+	box-shadow: none;
+    color:gray;
+}
+.lesson.cancelled > .field-targy {
+    text-decoration:line-through;
+    color:gray;
+}
+.lesson.cancelled > .lesson-bottom-div > * {
+    color:gray;
+}
+.lesson.changed {
+	background: var(--background-changed-gradient);
+	box-shadow: 0px 0px 8px var(--accent2);
+    border: 4px solid var(--accent2);
+}
+.field-changed {
+    background: var(--accent2);
+    border-radius:3px;
+    font-weight:bold;
+}
+.lesson.current {
+	background: var(--background-active-gradient);
+	box-shadow: 0px 0px 8px rgb(255,255,255,30%);
 }
