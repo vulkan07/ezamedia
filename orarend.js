@@ -65,7 +65,7 @@ function renderPhoneOrarend() {
 
     // Get Day
     const date = new Date();
-    const today = ["hétfő", "hétfő", "kedd", "szerda", "csütörtök", "péntek", "hétfő"][date.getDay()+5]; //szo és vas -> hétfő (0 = vas FASZOM)
+    const today = ["hétfő", "hétfő", "kedd", "szerda", "csütörtök", "péntek", "hétfő"][date.getDay()+0]; //szo és vas -> hétfő (0 = vas FASZOM)
 
 
     /// Set Day title
