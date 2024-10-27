@@ -7,10 +7,8 @@ var updateInterval;
 
 let names = null;
 let orarend = null;
-const names_URL = "http://localhost:8000/orarend/names.json"
-const orarend_URL = "http://localhost:8000/orarend/10E.json"
-//const names_URL = "http://192.168.0.107:8000/orarend/names.json"
-//const orarend_URL = "http://192.168.0.107:8000/orarend/10E.json"
+const names_URL = "/orarend/names.json"
+const orarend_URL = "/orarend/10E.json"
 
 function fail(reason) {
     document.getElementById('statusmsg').classList.remove('hidden');
