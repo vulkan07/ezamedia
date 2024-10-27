@@ -32,20 +32,16 @@
                 <p>Ez az oldal még fejlesztés alatt van.</p>
                 <button onmouseup="closeNotice()">OK</button>
             </div>
+            <img id="spinner" src="static/spinner.gif">
+            <p class="hidden" id="statusmsg"></p>
             <div id="table-div">
             </div>
             <div id="day-div">
-                <h2 id="day-title">Hétfő</h2>
-                <img id="spinner" src="static/spinner.gif">
             </div>
         </main>
         <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
-        <!-- 
-            1. period div
-            2. lessons-div div
-            3. lesson divs
-        -->
         <template>
+            <h2 id="day-title"></h2>
             <div class="lesson">
                 <div class="field-targy"></div>
                 <div class="lesson-bottom-div">
