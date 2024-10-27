@@ -109,6 +109,7 @@ main {
 }
 .lessons-div.tabbed {
     /*TODO*/
+    overflow-x: scroll;
 }
 
 
