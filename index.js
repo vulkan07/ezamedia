@@ -1,8 +1,4 @@
-// All pages containging the navbar use this !!!
-function toggleNavBar() {
-    document.querySelector('.navbar').classList.toggle('active');
-    document.querySelector('.navbar-btn').classList.toggle('active');
-}
+// Only for index.html, see main.js
 function playVideo() {
     const button = document.getElementById('video-btn');
     const video = document.getElementById('video');

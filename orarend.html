@@ -9,8 +9,8 @@
         <title>Órarend</title>
     </head>
     <body>
-        <script src="index.js"></script>
-        <script src="orarend.js"></script>
+        <script src="main.js" async></script>
+        <script src="orarend.js" defer></script>
         <header> 
             <div class="titlebar">
                 <div id="title-image-div">
@@ -34,6 +34,7 @@
             </div>
             <img id="spinner" src="static/spinner.gif">
             <p class="hidden" id="statusmsg"></p>
+            <p class="hidden" id="errormsg"></p>
             <div id="table-div">
             </div>
             <div id="day-div">

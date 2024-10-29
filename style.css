@@ -271,7 +271,7 @@ footer a:hover {
 	}
 
 	.titlebar h1 {
-        font-size: 1.3em;
+        font-size: 1.15em;
         max-width:60vw;
         text-align:right;
 	}
@@ -289,8 +289,8 @@ footer a:hover {
 		background: #353540;
 		border-radius:4px;
 
-		width: 1.8em;
-		height: 1.8em;
+		width: 1.7em;
+		height: 1.7em;
 	}
 
 	.navbar-btn img {

@@ -9,7 +9,8 @@
         <title>Ez a Média</title>
     </head>
     <body>
-        <script src="index.js"></script>
+        <script src="main.js" async></script>
+        <script src="index.js" async></script>
         <header> 
             <div class="titlebar">
                 <div id="title-image-div">
@@ -28,7 +29,7 @@
         <!--THIS IS WHERE YOU CHANGE THE MAIN PAGE-->
         <main>
                 <div class="unselectable" id="video-btn" onclick="playVideo()")>Ez a Média.</div>
-                <video id="video" class="hidden">
+                <video id="video" class="hidden" preload="auto"> <!-- starts loading video on page load, however seems to lag still on throttled network wtf --!>
                     <source src="https://shattereddisk.github.io/rickroll/rickroll.mp4" type="video/mp4">
                     Never gonna give you up...
                 </video>
