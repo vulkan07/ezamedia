@@ -3,6 +3,10 @@ function closeNotice() {
     document.getElementById('notice-div').classList.add('hidden');
 }
 
+function closeDetails() {
+    document.getElementById('lesson-details-div').classList.toggle('closed');
+}
+
 let updateInterval;
 
 let names = null;
@@ -45,7 +49,6 @@ function fetchData() {
 
             renderPhoneOrarend();
 
-            /*
             const date = new Date();
             setTimeout(renderPhoneOrarend, (61-date.getSeconds())*1000);
 
@@ -53,7 +56,6 @@ function fetchData() {
                 const date = new Date();
                 setTimeout(renderPhoneOrarend, (61-date.getSeconds())*1000);
             }, 60000); // update every min
-            */
 
         })
         .catch(error => {
@@ -156,3 +158,4 @@ function init() {
 
 //window.onload = init();
 document.addEventListener("DOMContentLoaded", () => init());
+

@@ -109,6 +109,7 @@ main {
 #day-div {
     display: flex;
     flex-direction: column;
+    margin-bottom:200px; /* for details window */
 }
 
 #day-title {
@@ -241,4 +242,49 @@ main {
 }
 .lesson.next {
     animation: nextlesson 3s linear infinite;
+}
+
+/*----------------------------------------------*/
+
+#lesson-details-div {
+    position:fixed;
+    bottom:0;
+    width:100%;
+    height:180px;
+
+	background: var(--background-tile-gradient);
+	box-shadow: 0px 0px 12px rgb(0,0,0,50%);
+    transition-duration:.2s;
+}
+#lesson-details-div.closed {
+    bottom:-190px;
+}
+
+#details-close {
+    padding:4px; /* enlarge size to make pressing easier */
+}
+#details-close:active {
+    font-weight:bold;
+}
+
+#details-container {
+    display:flex;
+    margin:12px;
+}
+#details-bar {
+    width:100%;
+    display:inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#details-bar > div > span {
+    font-weight:bold;
+    font-size: 0.8em;
+}
+
+#details-bar > div > .arrow {
+    font-size: 0.7em;
+    height:100%;
+    font-weight:normal;
+    color: var(--text-depressed);
 }
