@@ -1,5 +1,6 @@
 :root {
     --accent2: #a45821;
+    --lunch: #a45821;
 
     --bg1: #2a2a80;
     --bg2: #6464ee;
@@ -86,6 +87,24 @@ main {
 
 /*----------------------------------------------*/
 
+.lunchbar {
+    margin-bottom: 10px;
+    width:100vw;
+    display:inline-flex;
+    justify-content:space-evenly;
+    align-items:center;
+}
+.lunchbar > hr {
+    margin:5px;
+    width: inherit;
+    height:2px;
+    border: none;
+    background: var(--lunch);
+}
+.lunchbar > p {
+    font-size: .75em;
+    color: var(--lunch);
+}
 
 #day-div {
     display: flex;
@@ -106,7 +125,7 @@ main {
     max-width:400px;
     justify-content:center;
     width:97vw;
-    height:100px;
+/*    height:100px; */
     margin-bottom:10px;
 }
 .period-num {
@@ -120,10 +139,9 @@ main {
     align-items:center; /* fix borderless alignment */
 }
 .lessons-div.tabbed {
-    /*TODO*/
-    overflow-x: scroll;
+    flex-wrap: wrap-reverse;
+    justify-content:space-evenly;
 }
-
 
 @keyframes update {
 	1% { box-shadow: inset 0px 0px 8px rgb(235,235,255,80%); }
@@ -140,7 +158,7 @@ main {
 .lesson {
     animation: update 1s;
 
-    height:fit-content;
+    height: 100%;
     width: inherit;
 
     margin:0px 5px;
@@ -151,11 +169,32 @@ main {
 	box-shadow: 0px 0px 8px rgb(0,0,0,30%);
     font-size: 1.0em;
 }
+.lesson.inline {
+    display:inline-flex;
+    justify-content:space-between;
+    max-width: calc(50% - 30px);
+    height:18px;
+    align-items:center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.lesson.inline > .field-targy {
+    font-size:0.45em;
+    text-align:left;
+    max-width:40%;
+}
+.lesson.inline > .lesson-bottom-div  {
+    margin:0;
+    justify-content:space-between;
+}
+.lesson.inline > .lesson-bottom-div  > div {
+    font-size:0.55em;
+}
 
 .field-targy {
     font-weight:bold;
     text-align:center;
-    padding: 10px 5px;
+    padding: 7px 5px;
 }
 
 .lesson-bottom-div {

@@ -20,6 +20,18 @@ function fail(reason) {
 }
 
 function fetchData() {
+    fetch(names_URL)
+        .then(response => {
+            if (!response.ok) {
+                fail("Nem sikerült betölteni");
+                throw new Error("HTTP error " + response.status);
+            }
+            return response.json();
+        })
+        .then(json => {
+            names = json;
+        })
+
     fetch(orarend_URL)
         .then(response => {
             if (!response.ok) {
@@ -33,6 +45,7 @@ function fetchData() {
 
             renderPhoneOrarend();
 
+            /*
             const date = new Date();
             setTimeout(renderPhoneOrarend, (61-date.getSeconds())*1000);
 
@@ -40,6 +53,8 @@ function fetchData() {
                 const date = new Date();
                 setTimeout(renderPhoneOrarend, (61-date.getSeconds())*1000);
             }, 60000); // update every min
+            */
+
         })
         .catch(error => {
             fail(error);
@@ -63,9 +78,10 @@ function renderPhoneOrarend() {
 
 
     const lessonTemplate = document.querySelector("template").content.querySelector(".lesson");
+    const dayDiv = document.getElementById("day-div");
 
     // Calculate lesson to be highlighted
-    let current = date.getHours()-11; //-7
+    let current = date.getHours()-7; //-7
 
     for (let i = 0; i < 9; i++) {
         let periodDiv = document.createElement("div");
@@ -78,6 +94,7 @@ function renderPhoneOrarend() {
         periodnum.innerText = i;
         periodDiv.appendChild(periodnum);
         periodDiv.appendChild(lessonsDiv);
+        dayDiv.appendChild(periodDiv);
 
         const lessons = orarend[today][i];
         let content;
@@ -85,19 +102,30 @@ function renderPhoneOrarend() {
         // Hide periods without lessons (usually 0th or 8th)
         if (lessons.length === 0) {
             periodDiv.classList.add("hidden");
+            continue;
         }
 
         if (lessons.length > 2)
             lessonsDiv.classList.add("tabbed");
 
+        // Note: this is bad, ideally the period should contain the lunch field, not the lessons, since groups share lunch
+        if (lessons[0]["lunch"]) {
+            const lunchbar = document.querySelector("template").content.querySelector(".lunchbar");
+            dayDiv.appendChild(lunchbar.cloneNode(true));
+        }
+
+
         for (let j = 0; j < lessons.length; j++) {
             content = lessonTemplate.cloneNode(true);
             lessonsDiv.appendChild(content);
 
+            if (lessons.length > 2)
+                content.classList.add("inline");
+
             if (current > i)
                 content.classList.add("happened");
             // Ha kicsongettek, a következő óra "next", a jelenlegi "happened" stílust kap
-            if (date.getMinutes() >= 02) {
+            if (date.getMinutes() >= 45) {
                 if (current === i-1)
                     content.classList.add("next");
                 if (current === i)
