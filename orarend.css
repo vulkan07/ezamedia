@@ -55,7 +55,7 @@ main {
 	background: var(--background-tile-gradient);
 	border-radius: 6px;
 	box-shadow: 0px 0px 15px rgb(0,0,0,50%);
-    font-size: 1em;
+    font-size: 0.9em;
 
     display: flex;
     flex-direction: column;
@@ -71,10 +71,10 @@ main {
 #notice-div button {
     background: var(--background4);
     padding:4px 10px;
-    border: 4px solid var(--accent);
+    border: 3px solid var(--accent);
     border-radius: 6px;
     font-weight: bold;
-    font-size: .8em;
+    font-size: .7em;
 }
 #notice-div button:hover {
     background: var(--background-accent);
@@ -88,21 +88,20 @@ main {
 /*----------------------------------------------*/
 
 .lunchbar {
-    margin-bottom: 10px;
     width:100vw;
     display:inline-flex;
     justify-content:space-evenly;
     align-items:center;
 }
 .lunchbar > hr {
-    margin:5px;
+    margin:6px;
     width: inherit;
     height:2px;
     border: none;
     background: var(--lunch);
 }
 .lunchbar > p {
-    font-size: .75em;
+    font-size: .70em;
     color: var(--lunch);
 }
 
@@ -114,8 +113,7 @@ main {
 
 #day-title {
     text-align:center;
-    margin-top:15px;
-    font-size:1.15em;
+    margin:10px;
 }
 
 
@@ -127,11 +125,11 @@ main {
     justify-content:center;
     width:97vw;
 /*    height:100px; */
-    margin-bottom:10px;
+    margin: 5px 5px;
 }
 .period-num {
     color: var(--text-depressed);
-    margin:6px;
+    margin:5px;
 }
 .lessons-div {
     width:100%;
@@ -161,19 +159,19 @@ main {
 
     height: 100%;
     width: inherit;
+    margin:0px 4px;
+	padding: 6px;
 
-    margin:0px 5px;
-	padding: 10px;
+    border: 2px solid transparent;
 
 	background: var(--background-tile-gradient);
 	border-radius: 5px;
 	box-shadow: 0px 0px 8px rgb(0,0,0,30%);
-    font-size: 1.0em;
 }
 .lesson.inline {
     display:inline-flex;
     justify-content:space-between;
-    max-width: calc(50% - 30px);
+    max-width: calc(50% - 24px);
     height:18px;
     align-items:center;
     margin-top: 2px;
@@ -194,8 +192,9 @@ main {
 
 .field-targy {
     font-weight:bold;
+    font-size:0.9em;
     text-align:center;
-    padding: 7px 5px;
+    padding: 5px 5px;
 }
 
 .lesson-bottom-div {
@@ -206,7 +205,7 @@ main {
     margin:auto;
 }
 .lesson-bottom-div > div {
-    font-size: .65em;
+    font-size: .60em;
     padding:2px 4px;
 }
 
@@ -243,6 +242,10 @@ main {
 .lesson.next {
     animation: nextlesson 3s linear infinite;
 }
+.lesson.selected {
+    background: var(--background-accent);
+    border:2px solid var(--accent);
+}
 
 /*----------------------------------------------*/
 
@@ -250,17 +253,18 @@ main {
     position:fixed;
     bottom:0;
     width:100%;
-    height:180px;
+    height:200px;
 
 	background: var(--background-tile-gradient);
 	box-shadow: 0px 0px 12px rgb(0,0,0,50%);
     transition-duration:.2s;
 }
 #lesson-details-div.closed {
-    bottom:-190px;
+    bottom:-210px;
 }
 
 #details-close {
+    font-size:.85em;
     padding:4px; /* enlarge size to make pressing easier */
 }
 #details-close:active {
@@ -268,14 +272,14 @@ main {
 }
 
 #details-container {
-    display:flex;
-    margin:12px;
+    margin: 4px 12px;
 }
 #details-bar {
     width:100%;
     display:inline-flex;
     justify-content: space-between;
     align-items: center;
+    margin: 4px 0px;
 }
 #details-bar > div > span {
     font-weight:bold;
@@ -287,4 +291,28 @@ main {
     height:100%;
     font-weight:normal;
     color: var(--text-depressed);
+}
+#details-content {
+    display:flex;
+    flex-direction:column;
+    overflow-y:scroll;
+    padding:6px;
+    height:inherit;
+}
+#details-content > div > span {
+    font-size:.75em;
+}
+#details-content > span {
+    font-size:.75em;
+}
+.details-entry {
+    color: var(--text-depressed);
+    margin-right: 6px;
+}
+.details-item {
+    background: rgb(225,205,255,20%);
+    border-radius: 4px;
+    padding: 3px 5px;
+    font-size: .7em;
+    margin: 5px;
 }

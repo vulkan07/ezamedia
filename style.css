@@ -4,7 +4,7 @@
     --text:white;
 
     --accent: #9f131b;
-    --background-accent: #9f131b;
+    --background-accent: #4d1e20;
 
     --text-depressed:#909096;
     --background-depressed: #404048;
@@ -271,7 +271,7 @@ footer a:hover {
 	}
 
 	.titlebar h1 {
-        font-size: 1.15em;
+        font-size: 1.00em;
         max-width:60vw;
         text-align:right;
 	}
@@ -289,8 +289,8 @@ footer a:hover {
 		background: #353540;
 		border-radius:4px;
 
-		width: 1.7em;
-		height: 1.7em;
+		width: 1.5em;
+		height: 1.5em;
 	}
 
 	.navbar-btn img {
@@ -326,7 +326,7 @@ footer a:hover {
 	.navbar.active a {
 		padding: 10px 14px;
 		margin: 06px 0px;
-		font-size: 1em;
+		font-size: 0.8em;
         height:unset;
 	}
 

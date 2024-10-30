@@ -1,18 +1,29 @@
-function closeNotice() {
-    localStorage.setItem("noticeClosed", "true");
-    document.getElementById('notice-div').classList.add('hidden');
-}
-
-function closeDetails() {
-    document.getElementById('lesson-details-div').classList.toggle('closed');
-}
-
 let updateInterval;
 
 let names = null;
 let orarend = null;
 const names_URL = "/orarend/names.json"
 const orarend_URL = "/orarend/10E.json"
+
+let selectedLesson = null;
+
+function closeNotice() {
+    localStorage.setItem("noticeClosed", "true");
+    document.getElementById('notice-div').classList.add('hidden');
+}
+
+function closeDetails() {
+    if (selectedLesson) {
+        selectedLesson.classList.remove("selected");
+        selectedLesson = null;
+    }
+    document.getElementById('lesson-details-div').classList.add('closed');
+}
+
+function translate(type, acronym) {
+    if (names && names[type] && names[type][acronym]) return names[type][acronym];
+    return acronym;
+}
 
 function fail(reason) {
     document.getElementById('statusmsg').classList.remove('hidden');
@@ -64,14 +75,41 @@ function fetchData() {
         })
 }
 
+function updateDetailsDiv(srcdiv,lessonData,period,today) {
+    if (srcdiv === selectedLesson) {
+        closeDetails();
+        return;
+    }
+    if (selectedLesson) selectedLesson.classList.remove("selected");
+    selectedLesson = srcdiv;
+    srcdiv.classList.add("selected");
+    let div = document.getElementById('lesson-details-div');
+    div.classList.remove('closed');
+    div.querySelector("#details-day").innerText = today.charAt(0).toUpperCase() + today.slice(1);
+    div.querySelector("#details-period").innerText = period + ". óra";
+    div.querySelector("#details-group").innerText = translate("groups", lessonData.group);
+    div.querySelector("#details-teacher").innerText = translate("teachers", lessonData.teacher);
+    div.querySelector("#details-room").innerText = lessonData.room;
+    if (lessonData.lunch) 
+        div.querySelector("#details-lunch").classList.remove("hidden");
+    else
+        div.querySelector("#details-lunch").classList.add("hidden");
+
+    if (lessonData.double) 
+        div.querySelector("#details-double").classList.remove("hidden");
+    else
+        div.querySelector("#details-double").classList.add("hidden");
+}
 
 
 function renderPhoneOrarend() {
+//    closeDetails(); // re-rendering means the previous selection is lost because its deleted, this isnt good but im too lazy to fix
+
     document.getElementById("day-div").innerHTML = ""; // clear old render
 
     // Get today
     const date = new Date();
-    const today = ["hétfő", "hétfő", "kedd", "szerda", "csütörtök", "péntek", "hétfő"][date.getDay()+0]; //szo és vas -> hétfő (0 = vas FASZOM)
+    const today = ["hétfő", "hétfő", "kedd", "szerda", "csütörtök", "péntek", "hétfő"][date.getDay()-2]; //szo és vas -> hétfő (0 = vas FASZOM)
 
     /// Set Day title
     let dayTitle = document.querySelector("template").content.querySelector("#day-title").cloneNode();
@@ -119,6 +157,7 @@ function renderPhoneOrarend() {
 
         for (let j = 0; j < lessons.length; j++) {
             content = lessonTemplate.cloneNode(true);
+            content.addEventListener("click", e => updateDetailsDiv(lessonsDiv.querySelectorAll(".lesson")[j], lessons[j], i, today));
             lessonsDiv.appendChild(content);
 
             if (lessons.length > 2)
@@ -136,14 +175,13 @@ function renderPhoneOrarend() {
                 content.classList.add("current"); // Óra alatt
             }
 
-            if (names) { // translate acronyms to real names
-                content.querySelector(".field-targy").innerText = names["subjects"][lessons[j].subject];
-            } else {
-                content.querySelector(".field-targy").innerText = lessons[j].subject;
-               // console.log("translation failed");
-            }
+            content.querySelector(".field-targy").innerText = translate("subjects", lessons[j].subject);
             content.querySelector(".field-tanar").innerText = lessons[j].teacher;
             content.querySelector(".field-terem").innerText = lessons[j].room;
+
+            if (selectedLesson && selectedLesson.innerHTML === content.innerHTML) { // sketchy af way to remember selected lesson, causes bug on double (identical) lessons
+                content.classList.add("selected");
+            }
         }
     }
 

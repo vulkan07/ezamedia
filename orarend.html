@@ -43,13 +43,18 @@
                 <div id="details-container">
                     <div id="details-bar">
                         <div>
-                            <span class="details-day">Kedd</span>
+                            <span id="details-day">Kedd</span>
                             <span class="arrow">/</span>
-                            <span class="details-period">2. óra</span>
+                            <span id="details-period">2. óra</span>
                             <span class="arrow">/</span>
-                            <span class="details-group">Infó</span>
+                            <span id="details-group">Infó</span>
                         </div>
                         <div id="details-close" onclick="closeDetails()">&#x2715;</div>
+                    </div>
+                    <div id="details-content" class="inset">
+                        <div><span class="details-entry">Tanár:</span><span id="details-teacher"></span></div>
+                        <div><span class="details-entry">Terem:</span><span id="details-room"></span></div>
+                        <div><span class="details-item hidden" id="details-lunch">Ebédszünet</span><span class="details-item hidden" id="details-double">Dupla óra</span></div>
                     </div>
                 </div>
             </div>
@@ -65,9 +70,7 @@
                 </div>
             </div>
             <div class="lunchbar">
-                <hr>
-                <p>Ebédszünet</p>
-                <hr>
+                <hr> <p>Ebédszünet</p> <hr>
             </div>
         </template>
     </body>
