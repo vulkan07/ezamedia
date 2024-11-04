@@ -9,8 +9,8 @@
 
 		"FRA": "Francia",
 		"OLA": "Olasz",
-		"SP1": "Spanyol Kezdő",
-		"SP2": "Spanyol Haladó",
+		"SP1": "Spanyol 1",
+		"SP2": "Spanyol 2",
 		"NM1": "Német Kezdő",
 		"NM2": "Német Haladó"
 	},
@@ -30,17 +30,21 @@
 		"ALB": "Albert Viktória",
 		"MOH": "Mohai Tibor",
 		"MBD": "Magyarné Biczók Diána",
-		"AMY": "Amy Seibert",
 		"BBO": "Bagyó Boglárka",
         "TMÁ": "Tóth Mátyás",
         "MEK": "Martha Kreutzer",
+        "TAS": "Tasnádi Anikó",
+        "VCS": "Varga Csaba",
 
 		"SZA": "Szappanos Mária",
 		"TRC": "Tóthné Radó Cecilia",
 		"GZS": "Gazsó Melinda",
 		"BIÓ": "Bálint Ildikó",
 		"GNY": "Gönye Anikó",
-		"KOP": "Papp Ida"
+		"KOP": "Kocsácsné Papp Ida",
+        "PAL": "Pallos Márta",
+        "NÉV": "Nagy Éva",
+        "NZS": "Nagy Zsófia"
 	},
 
 	"subjects": {
