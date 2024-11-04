@@ -109,7 +109,7 @@ function renderPhoneOrarend() {
 
     // Get today
     const date = new Date();
-    const today = ["hétfő", "hétfő", "kedd", "szerda", "csütörtök", "péntek", "hétfő"][date.getDay()-2]; //szo és vas -> hétfő (0 = vas FASZOM)
+    const today = ["hétfő", "hétfő", "kedd", "szerda", "csütörtök", "péntek", "hétfő"][date.getDay()+0]; //szo és vas -> hétfő (0 = vas FASZOM)
 
     /// Set Day title
     let dayTitle = document.querySelector("template").content.querySelector("#day-title").cloneNode();
