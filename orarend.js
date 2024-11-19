@@ -165,15 +165,19 @@ function renderPhoneOrarend() {
 
             if (current > i)
                 content.classList.add("happened");
+
             // Ha kicsongettek, a következő óra "next", a jelenlegi "happened" stílust kap
             if (date.getMinutes() >= 45) {
                 if (current === i-1)
-                    content.classList.add("next");
+                    content.classList.add("current");
                 if (current === i)
                     content.classList.add("happened");
             } else if (current === i) {
                 content.classList.add("current"); // Óra alatt
             }
+
+            if (i > 3)
+                window.scrollTo(0, 160*(i-4) ); // scroll down after a bit
 
             content.querySelector(".field-targy").innerText = translate("subjects", lessons[j].subject);
             content.querySelector(".field-tanar").innerText = lessons[j].teacher;
