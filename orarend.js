@@ -6,6 +6,7 @@ const names_URL = "/orarend/names.json"
 const orarend_URL = "/orarend/10E.json"
 
 let selectedLesson = null;
+let selectedGroup = {group:null, index:0};
 
 function closeNotice() {
     localStorage.setItem("noticeClosed", "true");
@@ -101,6 +102,11 @@ function updateDetailsDiv(srcdiv,lessonData,period,today) {
         div.querySelector("#details-double").classList.add("hidden");
 }
 
+function onGroupSelect() {
+    selectedGroup.group = document.getElementById("groupselector").value;
+    selectedGroup.index = document.getElementById("groupselector").selectedIndex;
+    renderPhoneOrarend();
+}
 
 function renderPhoneOrarend() {
 //    closeDetails(); // re-rendering means the previous selection is lost because its deleted, this isnt good but im too lazy to fix
@@ -115,6 +121,12 @@ function renderPhoneOrarend() {
     let dayTitle = document.querySelector("template").content.querySelector("#day-title").cloneNode();
     document.getElementById("day-div").appendChild(dayTitle);
     dayTitle.innerText = today.charAt(0).toUpperCase() + today.slice(1);
+
+    // Group Selector
+    let selector = document.querySelector("template").content.querySelector("#groupselector").cloneNode(true);
+    selector.value = selectedGroup.group; // sketchy af
+    selector.selectedIndex = selectedGroup.index;
+    document.getElementById("day-div").appendChild(selector);
 
 
     const lessonTemplate = document.querySelector("template").content.querySelector(".lesson");
@@ -154,8 +166,16 @@ function renderPhoneOrarend() {
             dayDiv.appendChild(lunchbar.cloneNode(true));
         }
 
+        filter = false;
+        if (selectedGroup !== null) {
+            for (let j = 0; j < lessons.length; j++)
+                filter |= lessons[j].group === selectedGroup.group;
+        }
 
         for (let j = 0; j < lessons.length; j++) {
+            if (filter && lessons[j].group !== selectedGroup.group) {
+                continue;
+            }
             content = lessonTemplate.cloneNode(true);
             content.addEventListener("click", e => updateDetailsDiv(lessonsDiv.querySelectorAll(".lesson")[j], lessons[j], i, today));
             lessonsDiv.appendChild(content);
