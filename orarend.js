@@ -6,7 +6,8 @@ const names_URL = "/orarend/names.json"
 const orarend_URL = "/orarend/10E.json"
 
 let selectedLesson = null;
-let selectedGroup = {group:null, index:0};
+let selectedGroup = {group:"Mindenki", index:0};
+let firstRender = true; // TODO sketchy faszomat mar
 
 function closeNotice() {
     localStorage.setItem("noticeClosed", "true");
@@ -196,8 +197,6 @@ function renderPhoneOrarend() {
                 content.classList.add("current"); // Óra alatt
             }
 
-            if (i > 3)
-                window.scrollTo(0, 160*(i-4) ); // scroll down after a bit
 
             content.querySelector(".field-targy").innerText = translate("subjects", lessons[j].subject);
             content.querySelector(".field-tanar").innerText = lessons[j].teacher;
@@ -207,6 +206,11 @@ function renderPhoneOrarend() {
                 content.classList.add("selected");
             }
         }
+
+    }
+    if (current > 3 && firstRender) {
+        window.scrollTo(0, 100 ); // scroll down after a bit
+        firstRender = false;
     }
 
     console.log("Orarend rendered");
